@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import './General.css';
+import '../styles/General.css';
 
-class General extends Component {}
+class General extends Component {
+	render() {
+		return (
+			<div className="General">
+				<h2>General Information goes here!</h2>
+			</div>
+		);
+	}
+}
 
 export default General;
