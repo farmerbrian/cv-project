@@ -17,7 +17,7 @@ class NewPracticalXpForm extends Component {
 
 	handleSubmit(evt) {
 		evt.preventDefault();
-		this.props.createTodo({ ...this.state, id: v4() });
+		this.props.createXp({ ...this.state, id: v4() });
 		this.setState({ employer: '' });
 	}
 

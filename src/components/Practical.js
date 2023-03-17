@@ -7,52 +7,52 @@ class Practical extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			todos: [],
+			practXp: [],
 		};
 		this.create = this.create.bind(this);
 		this.remove = this.remove.bind(this);
 		this.update = this.update.bind(this);
 		this.toggleCompletion = this.toggleCompletion.bind(this);
 	}
-	create(newTodo) {
+	create(newXp) {
 		this.setState({
-			todos: [...this.state.todos, newTodo],
+			practXp: [...this.state.practXp, newXp],
 		});
 	}
 	remove(id) {
 		this.setState({
-			todos: this.state.todos.filter((t) => t.id !== id),
+			practXp: this.state.practXp.filter((t) => t.id !== id),
 		});
 	}
-	update(id, updatedTask) {
-		const updatedTodos = this.state.todos.map((todo) => {
-			if (todo.id === id) {
-				return { ...todo, employer: updatedTask };
+	update(id, updatedXp) {
+		const updatedXps = this.state.practXp.map((xp) => {
+			if (xp.id === id) {
+				return { ...xp, employer: updatedXp };
 			}
-			return todo;
+			return xp;
 		});
-		this.setState({ todos: updatedTodos });
+		this.setState({ practXp: updatedXps });
 	}
 	toggleCompletion(id) {
-		const updatedTodos = this.state.todos.map((todo) => {
-			if (todo.id === id) {
-				return { ...todo, completed: !todo.completed };
+		const updatedXps = this.state.practXp.map((xp) => {
+			if (xp.id === id) {
+				return { ...xp, completed: !xp.completed };
 			}
-			return todo;
+			return xp;
 		});
-		this.setState({ todos: updatedTodos });
+		this.setState({ practXp: updatedXps });
 	}
 	render() {
-		const todos = this.state.todos.map((todo) => {
+		const practXp = this.state.practXp.map((xp) => {
 			return (
 				<PracticalXp
-					key={todo.id}
-					id={todo.id}
-					employer={todo.employer}
-					completed={todo.completed}
-					removeTodo={this.remove}
-					updateTodo={this.update}
-					toggleTodo={this.toggleCompletion}
+					key={xp.id}
+					id={xp.id}
+					employer={xp.employer}
+					completed={xp.completed}
+					removeXp={this.remove}
+					updateXp={this.update}
+					toggleXp={this.toggleCompletion}
 				/>
 			);
 		});
@@ -61,8 +61,8 @@ class Practical extends Component {
 				<h1>Practical Experience</h1>
 				<h3>List your work experience below</h3>
 
-				<ul>{todos}</ul>
-				<NewPracticalXpForm createTodo={this.create} />
+				<ul>{practXp}</ul>
+				<NewPracticalXpForm createXp={this.create} />
 			</div>
 		);
 	}

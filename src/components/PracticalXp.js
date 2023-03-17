@@ -40,11 +40,8 @@ class PracticalXp extends Component {
 		let result;
 		if (this.state.isEditing) {
 			result = (
-				<div className="Todo">
-					<form
-						className="Todo-edit-form"
-						onSubmit={this.handleUpdate}
-					>
+				<div className="Xp">
+					<form className="Xp-edit-form" onSubmit={this.handleUpdate}>
 						<input
 							type="text"
 							value={this.state.employer}
@@ -86,12 +83,10 @@ class PracticalXp extends Component {
 			);
 		} else {
 			result = (
-				<div className="Todo">
+				<div className="Xp">
 					<li
 						className={
-							this.props.completed
-								? 'Todo-task completed'
-								: 'Todo-task'
+							this.props.completed ? 'PractXp completed' : 'PractXp'
 						}
 						onClick={this.handleToggle}
 					>
@@ -102,7 +97,7 @@ class PracticalXp extends Component {
 					<li>{this.state.dateTo}</li>
 					<li>{this.state.description}</li>
 
-					<div className="Todo-buttons">
+					<div className="PractXp-buttons">
 						<button onClick={this.toggleForm}>
 							<i className="fas fa-pen" />
 						</button>
