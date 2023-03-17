@@ -5,7 +5,7 @@ import { v4 } from 'uuid';
 class NewPracticalXpForm extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { task: '' };
+		this.state = { employer: '' };
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -18,7 +18,7 @@ class NewPracticalXpForm extends Component {
 	handleSubmit(evt) {
 		evt.preventDefault();
 		this.props.createTodo({ ...this.state, id: v4() });
-		this.setState({ task: '' });
+		this.setState({ employer: '' });
 	}
 
 	render() {
@@ -27,13 +27,13 @@ class NewPracticalXpForm extends Component {
 				className="NewPracticalXpForm"
 				onSubmit={this.handleSubmit}
 			>
-				<label htmlFor="task">New Work Experience</label>
+				<label htmlFor="employer">New Work Experience</label>
 				<input
 					type="text"
 					placeholder="New Work Experience"
-					id="task"
-					name="task"
-					value={this.state.task}
+					id="employer"
+					name="employer"
+					value={this.state.employer}
 					onChange={this.handleChange}
 				/>
 				<button>Add Work Experience</button>

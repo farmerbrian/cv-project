@@ -27,7 +27,7 @@ class Practical extends Component {
 	update(id, updatedTask) {
 		const updatedTodos = this.state.todos.map((todo) => {
 			if (todo.id === id) {
-				return { ...todo, task: updatedTask };
+				return { ...todo, employer: updatedTask };
 			}
 			return todo;
 		});
@@ -48,7 +48,7 @@ class Practical extends Component {
 				<PracticalXp
 					key={todo.id}
 					id={todo.id}
-					task={todo.task}
+					employer={todo.employer}
 					completed={todo.completed}
 					removeTodo={this.remove}
 					updateTodo={this.update}

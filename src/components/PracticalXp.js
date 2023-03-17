@@ -5,7 +5,7 @@ class PracticalXp extends Component {
 		super(props);
 		this.state = {
 			isEditing: false,
-			task: this.props.task,
+			employer: this.props.employer,
 			position: '',
 			dateFrom: '',
 			dateTo: '',
@@ -25,7 +25,7 @@ class PracticalXp extends Component {
 	}
 	handleUpdate(evt) {
 		evt.preventDefault();
-		this.props.updateTodo(this.props.id, this.state.task);
+		this.props.updateTodo(this.props.id, this.state.employer);
 		this.setState({ isEditing: false });
 	}
 	handleChange(evt) {
@@ -47,7 +47,7 @@ class PracticalXp extends Component {
 					>
 						<input
 							type="text"
-							value={this.state.task}
+							value={this.state.employer}
 							name="employer"
 							placeholder="Employer"
 							onChange={this.handleChange}
@@ -95,7 +95,7 @@ class PracticalXp extends Component {
 						}
 						onClick={this.handleToggle}
 					>
-						{this.props.task}
+						{this.props.employer}
 					</li>
 					<li>{this.state.position}</li>
 					<li>{this.state.dateFrom}</li>
