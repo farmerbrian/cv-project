@@ -18,14 +18,14 @@ class GeneralXp extends Component {
 		this.handleToggle = this.handleToggle.bind(this);
 	}
 	handleRemove() {
-		this.props.removeTodo(this.props.id);
+		this.props.removeXp(this.props.id);
 	}
 	toggleForm() {
 		this.setState({ isEditing: !this.state.isEditing });
 	}
 	handleUpdate(evt) {
 		evt.preventDefault();
-		this.props.updateTodo(this.props.id, this.state.employer);
+		this.props.updateXp(this.props.id, this.state.employer);
 		this.setState({ isEditing: false });
 	}
 	handleChange(evt) {
@@ -34,7 +34,7 @@ class GeneralXp extends Component {
 		});
 	}
 	handleToggle(evt) {
-		this.props.toggleTodo(this.props.id);
+		this.props.toggleXp(this.props.id);
 	}
 	render() {
 		let result;

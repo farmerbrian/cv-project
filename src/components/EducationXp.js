@@ -5,7 +5,7 @@ class EducationXp extends Component {
 		super(props);
 		this.state = {
 			isEditing: false,
-			employer: this.props.employer,
+			school: this.props.school,
 			position: '',
 			dateFrom: '',
 			dateTo: '',
@@ -18,14 +18,14 @@ class EducationXp extends Component {
 		this.handleToggle = this.handleToggle.bind(this);
 	}
 	handleRemove() {
-		this.props.removeTodo(this.props.id);
+		this.props.removeXp(this.props.id);
 	}
 	toggleForm() {
 		this.setState({ isEditing: !this.state.isEditing });
 	}
 	handleUpdate(evt) {
 		evt.preventDefault();
-		this.props.updateTodo(this.props.id, this.state.employer);
+		this.props.updateXp(this.props.id, this.state.school);
 		this.setState({ isEditing: false });
 	}
 	handleChange(evt) {
@@ -34,7 +34,7 @@ class EducationXp extends Component {
 		});
 	}
 	handleToggle(evt) {
-		this.props.toggleTodo(this.props.id);
+		this.props.toggleXp(this.props.id);
 	}
 	render() {
 		let result;
@@ -44,9 +44,9 @@ class EducationXp extends Component {
 					<form className="Xp-edit-form" onSubmit={this.handleUpdate}>
 						<input
 							type="text"
-							value={this.state.employer}
-							name="employer"
-							placeholder="Employer"
+							value={this.state.school}
+							name="school"
+							placeholder="School"
 							onChange={this.handleChange}
 						></input>
 						<input
@@ -90,7 +90,7 @@ class EducationXp extends Component {
 						}
 						onClick={this.handleToggle}
 					>
-						{this.props.employer}
+						{this.props.school}
 					</li>
 					<li>{this.state.position}</li>
 					<li>{this.state.dateFrom}</li>

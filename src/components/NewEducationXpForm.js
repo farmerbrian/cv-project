@@ -5,7 +5,7 @@ import { v4 } from 'uuid';
 class NewEducationXpForm extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { employer: '' };
+		this.state = { school: '' };
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -18,7 +18,7 @@ class NewEducationXpForm extends Component {
 	handleSubmit(evt) {
 		evt.preventDefault();
 		this.props.createXp({ ...this.state, id: v4() });
-		this.setState({ employer: '' });
+		this.setState({ school: '' });
 	}
 
 	render() {
@@ -31,9 +31,9 @@ class NewEducationXpForm extends Component {
 				<input
 					type="text"
 					placeholder="School Name"
-					id="employer"
-					name="employer"
-					value={this.state.employer}
+					id="school"
+					name="school"
+					value={this.state.school}
 					onChange={this.handleChange}
 				/>
 				<button>Add School</button>

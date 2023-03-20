@@ -27,7 +27,7 @@ class Education extends Component {
 	update(id, updatedXp) {
 		const updatedXps = this.state.practXp.map((xp) => {
 			if (xp.id === id) {
-				return { ...xp, employer: updatedXp };
+				return { ...xp, school: updatedXp };
 			}
 			return xp;
 		});
@@ -48,7 +48,7 @@ class Education extends Component {
 				<EducationXp
 					key={xp.id}
 					id={xp.id}
-					employer={xp.employer}
+					school={xp.school}
 					completed={xp.completed}
 					removeXp={this.remove}
 					updateXp={this.update}
