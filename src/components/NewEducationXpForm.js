@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { v4 } from 'uuid';
 // import './NewPracticalXpForm.css';
 
-class NewPracticalXpForm extends Component {
+class NewEducationXpForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { employer: '' };
@@ -24,22 +24,22 @@ class NewPracticalXpForm extends Component {
 	render() {
 		return (
 			<form
-				className="NewPracticalXpForm"
+				className="NewEducationXpForm"
 				onSubmit={this.handleSubmit}
 			>
 				{/* <label htmlFor="employer">New Work Experience</label> */}
 				<input
 					type="text"
-					placeholder="Employer Name"
+					placeholder="School Name"
 					id="employer"
 					name="employer"
 					value={this.state.employer}
 					onChange={this.handleChange}
 				/>
-				<button>Add Employer</button>
+				<button>Add School</button>
 			</form>
 		);
 	}
 }
 
-export default NewPracticalXpForm;
+export default NewEducationXpForm;
