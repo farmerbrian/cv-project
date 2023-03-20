@@ -49,10 +49,10 @@ class Education extends Component {
 					key={xp.id}
 					id={xp.id}
 					school={xp.school}
-					completed={xp.completed}
+					// completed={xp.completed}
 					removeXp={this.remove}
 					updateXp={this.update}
-					toggleXp={this.toggleCompletion}
+					// toggleXp={this.toggleCompletion}
 				/>
 			);
 		});

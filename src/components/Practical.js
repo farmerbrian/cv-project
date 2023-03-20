@@ -49,7 +49,7 @@ class Practical extends Component {
 					key={xp.id}
 					id={xp.id}
 					employer={xp.employer}
-					completed={xp.completed}
+					// completed={xp.completed}
 					removeXp={this.remove}
 					updateXp={this.update}
 					toggleXp={this.toggleCompletion}

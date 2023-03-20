@@ -5,7 +5,7 @@ import { v4 } from 'uuid';
 class NewGeneralXpForm extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { employer: '' };
+		this.state = { name: '' };
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
@@ -18,23 +18,37 @@ class NewGeneralXpForm extends Component {
 	handleSubmit(evt) {
 		evt.preventDefault();
 		this.props.createXp({ ...this.state, id: v4() });
-		this.setState({ employer: '' });
+		this.setState({ name: '' });
 	}
 
 	render() {
 		return (
-			<form className="NewGeneralXpForm" onSubmit={this.handleSubmit}>
-				{/* <label htmlFor="employer">New Work Experience</label> */}
-				<input
-					type="text"
-					placeholder="Your Name"
-					id="employer"
-					name="employer"
-					value={this.state.employer}
-					onChange={this.handleChange}
-				/>
-				<button>Add</button>
-			</form>
+			<div></div>
+			// <form className="NewGeneralXpForm" onSubmit={this.handleSubmit}>
+			// 		<input
+			// 		type="text"
+			// 		placeholder="Your Name"
+			// 		id="name"
+			// 		name="name"
+			// 		value={this.state.name}
+			// 		onChange={this.handleChange}
+			// 	/>
+			// 	<input
+			// 		type="email"
+			// 		value={this.state.email}
+			// 		name="email"
+			// 		placeholder="Email"
+			// 		onChange={this.handleChange}
+			// 	></input>
+			// 	<input
+			// 		type="text"
+			// 		value={this.state.phone}
+			// 		name="phone"
+			// 		placeholder="Phone Number"
+			// 		onChange={this.handleChange}
+			// 	></input>
+			// 	<button>Add</button>
+			// </form>
 		);
 	}
 }

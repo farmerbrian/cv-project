@@ -6,16 +6,16 @@ class EducationXp extends Component {
 		this.state = {
 			isEditing: false,
 			school: this.props.school,
-			position: '',
+			major: '',
 			dateFrom: '',
 			dateTo: '',
-			description: '',
+			graduated: '',
 		};
 		this.handleRemove = this.handleRemove.bind(this);
 		this.toggleForm = this.toggleForm.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		this.handleToggle = this.handleToggle.bind(this);
+		// this.handleToggle = this.handleToggle.bind(this);
 	}
 	handleRemove() {
 		this.props.removeXp(this.props.id);
@@ -51,30 +51,30 @@ class EducationXp extends Component {
 						></input>
 						<input
 							type="text"
-							value={this.state.position}
-							name="position"
-							placeholder="Position"
+							value={this.state.major}
+							name="major"
+							placeholder="Major"
 							onChange={this.handleChange}
 						></input>
 						<input
 							type="date"
 							value={this.state.dateFrom}
 							name="dateFrom"
-							placeholder="Date worked from"
+							placeholder="Date attended from"
 							onChange={this.handleChange}
 						></input>
 						<input
 							type="date"
 							value={this.state.dateTo}
 							name="dateTo"
-							placeholder="Date worked to"
+							placeholder="Date attended to"
 							onChange={this.handleChange}
 						></input>
 						<input
 							type="text"
-							value={this.state.description}
-							name="description"
-							placeholder="Job description"
+							value={this.state.graduated}
+							name="graduated"
+							placeholder="Graduated?"
 							onChange={this.handleChange}
 						></input>
 						<button>Save</button>
@@ -86,16 +86,17 @@ class EducationXp extends Component {
 				<div className="Xp">
 					<li
 						className={
-							this.props.completed ? 'PractXp completed' : 'PractXp'
+							' EducationXp'
+							// this.props.completed ? 'PractXp completed' : 'PractXp'
 						}
-						onClick={this.handleToggle}
+						// onClick={this.handleToggle}
 					>
 						{this.props.school}
 					</li>
-					<li>{this.state.position}</li>
+					<li>{this.state.major}</li>
 					<li>{this.state.dateFrom}</li>
 					<li>{this.state.dateTo}</li>
-					<li>{this.state.description}</li>
+					<li>{this.state.graduated}</li>
 
 					<div className="PractXp-buttons">
 						<button onClick={this.toggleForm}>

@@ -7,10 +7,10 @@ class General extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			practXp: [],
+			practXp: [{ name: 'Your Name', id: '1234' }],
 		};
 		this.create = this.create.bind(this);
-		this.remove = this.remove.bind(this);
+		// this.remove = this.remove.bind(this);
 		this.update = this.update.bind(this);
 		this.toggleCompletion = this.toggleCompletion.bind(this);
 	}
@@ -27,7 +27,7 @@ class General extends Component {
 	update(id, updatedXp) {
 		const updatedXps = this.state.practXp.map((xp) => {
 			if (xp.id === id) {
-				return { ...xp, employer: updatedXp };
+				return { ...xp, name: updatedXp };
 			}
 			return xp;
 		});
@@ -48,9 +48,9 @@ class General extends Component {
 				<GeneralXp
 					key={xp.id}
 					id={xp.id}
-					employer={xp.employer}
-					completed={xp.completed}
-					removeXp={this.remove}
+					name={xp.name}
+					// completed={xp.completed}
+					// removeXp={this.remove}
 					updateXp={this.update}
 					toggleXp={this.toggleCompletion}
 				/>
@@ -62,7 +62,7 @@ class General extends Component {
 				<h3>Tell us about yourself</h3>
 
 				<ul>{practXp}</ul>
-				<NewGeneralXpForm createXp={this.create} />
+				{/* <NewGeneralXpForm createXp={this.create} /> */}
 			</div>
 		);
 	}
