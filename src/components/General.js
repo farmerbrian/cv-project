@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewGeneralXpForm from './NewGeneralXpForm';
+// import NewGeneralXpForm from './NewGeneralXpForm';
 import GeneralXp from './GeneralXp';
 import '../styles/General.css';
 
@@ -7,7 +7,7 @@ class General extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			practXp: [{ name: 'Your Name', id: '1234' }],
+			genXp: [{ name: 'Your Name', id: '1234' }],
 		};
 		this.create = this.create.bind(this);
 		// this.remove = this.remove.bind(this);
@@ -16,34 +16,34 @@ class General extends Component {
 	}
 	create(newXp) {
 		this.setState({
-			practXp: [...this.state.practXp, newXp],
+			genXp: [...this.state.genXp, newXp],
 		});
 	}
 	remove(id) {
 		this.setState({
-			practXp: this.state.practXp.filter((t) => t.id !== id),
+			genXp: this.state.genXp.filter((t) => t.id !== id),
 		});
 	}
 	update(id, updatedXp) {
-		const updatedXps = this.state.practXp.map((xp) => {
+		const updatedXps = this.state.genXp.map((xp) => {
 			if (xp.id === id) {
 				return { ...xp, name: updatedXp };
 			}
 			return xp;
 		});
-		this.setState({ practXp: updatedXps });
+		this.setState({ genXp: updatedXps });
 	}
 	toggleCompletion(id) {
-		const updatedXps = this.state.practXp.map((xp) => {
+		const updatedXps = this.state.genXp.map((xp) => {
 			if (xp.id === id) {
 				return { ...xp, completed: !xp.completed };
 			}
 			return xp;
 		});
-		this.setState({ practXp: updatedXps });
+		this.setState({ genXp: updatedXps });
 	}
 	render() {
-		const practXp = this.state.practXp.map((xp) => {
+		const genXp = this.state.genXp.map((xp) => {
 			return (
 				<GeneralXp
 					key={xp.id}
@@ -57,11 +57,11 @@ class General extends Component {
 			);
 		});
 		return (
-			<div className="TodoList">
+			<div className="GeneralContainer">
 				<h1>General Information</h1>
 				<h3>Tell us about yourself</h3>
 
-				<ul>{practXp}</ul>
+				<ul>{genXp}</ul>
 				{/* <NewGeneralXpForm createXp={this.create} /> */}
 			</div>
 		);

@@ -12,7 +12,7 @@ class Practical extends Component {
 		this.create = this.create.bind(this);
 		this.remove = this.remove.bind(this);
 		this.update = this.update.bind(this);
-		this.toggleCompletion = this.toggleCompletion.bind(this);
+		// this.toggleCompletion = this.toggleCompletion.bind(this);
 	}
 	create(newXp) {
 		this.setState({
@@ -33,15 +33,15 @@ class Practical extends Component {
 		});
 		this.setState({ practXp: updatedXps });
 	}
-	toggleCompletion(id) {
-		const updatedXps = this.state.practXp.map((xp) => {
-			if (xp.id === id) {
-				return { ...xp, completed: !xp.completed };
-			}
-			return xp;
-		});
-		this.setState({ practXp: updatedXps });
-	}
+	// toggleCompletion(id) {
+	// 	const updatedXps = this.state.practXp.map((xp) => {
+	// 		if (xp.id === id) {
+	// 			return { ...xp, completed: !xp.completed };
+	// 		}
+	// 		return xp;
+	// 	});
+	// 	this.setState({ practXp: updatedXps });
+	// }
 	render() {
 		const practXp = this.state.practXp.map((xp) => {
 			return (
@@ -57,7 +57,7 @@ class Practical extends Component {
 			);
 		});
 		return (
-			<div className="TodoList">
+			<div className="PracticalContainer">
 				<h1>Practical Experience</h1>
 				<h3>List your work experience below</h3>
 

@@ -13,7 +13,7 @@ class GeneralXp extends Component {
 		this.toggleForm = this.toggleForm.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		this.handleToggle = this.handleToggle.bind(this);
+		// this.handleToggle = this.handleToggle.bind(this);
 	}
 	// handleRemove() {
 	// 	this.props.removeXp(this.props.id);
@@ -31,14 +31,14 @@ class GeneralXp extends Component {
 			[evt.target.name]: evt.target.value,
 		});
 	}
-	handleToggle(evt) {
-		this.props.toggleXp(this.props.id);
-	}
+	// handleToggle(evt) {
+	// 	this.props.toggleXp(this.props.id);
+	// }
 	render() {
 		let result;
 		if (this.state.isEditing) {
 			result = (
-				<div className="Xp">
+				<div className="GenXp">
 					<form className="Xp-edit-form" onSubmit={this.handleUpdate}>
 						<input
 							type="text"
@@ -67,14 +67,12 @@ class GeneralXp extends Component {
 			);
 		} else {
 			result = (
-				<div className="Xp">
-					<li className={'GeneralInfo'} onClick={this.handleToggle}>
-						{this.props.name}
-					</li>
+				<div className="GenXp">
+					<li className={'GeneralInfo'}>{this.props.name}</li>
 					<li>{this.state.email}</li>
 					<li>{this.state.phone}</li>
 
-					<div className="PractXp-buttons">
+					<div className="GenXp-buttons">
 						<button onClick={this.toggleForm}>
 							<i className="fas fa-pen" />
 						</button>

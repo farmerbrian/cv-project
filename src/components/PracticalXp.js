@@ -15,7 +15,7 @@ class PracticalXp extends Component {
 		this.toggleForm = this.toggleForm.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		this.handleToggle = this.handleToggle.bind(this);
+		// this.handleToggle = this.handleToggle.bind(this);
 	}
 	handleRemove() {
 		this.props.removeXp(this.props.id);
@@ -33,14 +33,14 @@ class PracticalXp extends Component {
 			[evt.target.name]: evt.target.value,
 		});
 	}
-	handleToggle(evt) {
-		this.props.toggleXp(this.props.id);
-	}
+	// handleToggle(evt) {
+	// 	this.props.toggleXp(this.props.id);
+	// }
 	render() {
 		let result;
 		if (this.state.isEditing) {
 			result = (
-				<div className="Xp">
+				<div className="PracticalXp">
 					<form className="Xp-edit-form" onSubmit={this.handleUpdate}>
 						<input
 							type="text"
@@ -83,15 +83,8 @@ class PracticalXp extends Component {
 			);
 		} else {
 			result = (
-				<div className="Xp">
-					<li
-						className={
-							this.props.completed ? 'PractXp completed' : 'PractXp'
-						}
-						onClick={this.handleToggle}
-					>
-						{this.props.employer}
-					</li>
+				<div className="PracticalXp">
+					<li className={'PractXpList'}>{this.props.employer}</li>
 					<li>{this.state.position}</li>
 					<li>{this.state.dateFrom}</li>
 					<li>{this.state.dateTo}</li>

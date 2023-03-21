@@ -33,9 +33,9 @@ class EducationXp extends Component {
 			[evt.target.name]: evt.target.value,
 		});
 	}
-	handleToggle(evt) {
-		this.props.toggleXp(this.props.id);
-	}
+	// handleToggle(evt) {
+	// 	this.props.toggleXp(this.props.id);
+	// }
 	render() {
 		let result;
 		if (this.state.isEditing) {
@@ -98,7 +98,7 @@ class EducationXp extends Component {
 					<li>{this.state.dateTo}</li>
 					<li>{this.state.graduated}</li>
 
-					<div className="PractXp-buttons">
+					<div className="eduXp-buttons">
 						<button onClick={this.toggleForm}>
 							<i className="fas fa-pen" />
 						</button>
