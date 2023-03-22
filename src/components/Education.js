@@ -12,7 +12,6 @@ class Education extends Component {
 		this.create = this.create.bind(this);
 		this.remove = this.remove.bind(this);
 		this.update = this.update.bind(this);
-		// this.toggleCompletion = this.toggleCompletion.bind(this);
 	}
 	create(newXp) {
 		this.setState({
@@ -49,16 +48,14 @@ class Education extends Component {
 					key={xp.id}
 					id={xp.id}
 					school={xp.school}
-					// completed={xp.completed}
 					removeXp={this.remove}
 					updateXp={this.update}
-					// toggleXp={this.toggleCompletion}
 				/>
 			);
 		});
 		return (
 			<div className="EducationalContainer">
-				<h1>School Information</h1>
+				<h2>School Information</h2>
 				<h3>List your school experience below</h3>
 
 				<ul>{eduXp}</ul>

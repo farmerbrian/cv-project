@@ -27,7 +27,6 @@ class NewPracticalXpForm extends Component {
 				className="NewPracticalXpForm"
 				onSubmit={this.handleSubmit}
 			>
-				{/* <label htmlFor="employer">New Work Experience</label> */}
 				<input
 					type="text"
 					placeholder="Employer Name"

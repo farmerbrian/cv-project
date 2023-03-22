@@ -15,7 +15,6 @@ class PracticalXp extends Component {
 		this.toggleForm = this.toggleForm.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		// this.handleToggle = this.handleToggle.bind(this);
 	}
 	handleRemove() {
 		this.props.removeXp(this.props.id);
@@ -33,9 +32,7 @@ class PracticalXp extends Component {
 			[evt.target.name]: evt.target.value,
 		});
 	}
-	// handleToggle(evt) {
-	// 	this.props.toggleXp(this.props.id);
-	// }
+
 	render() {
 		let result;
 		if (this.state.isEditing) {
@@ -57,17 +54,17 @@ class PracticalXp extends Component {
 							onChange={this.handleChange}
 						></input>
 						<input
-							type="date"
+							type="number"
 							value={this.state.dateFrom}
 							name="dateFrom"
-							placeholder="Date worked from"
+							placeholder="Year worked from"
 							onChange={this.handleChange}
 						></input>
 						<input
-							type="date"
+							type="number"
 							value={this.state.dateTo}
 							name="dateTo"
-							placeholder="Date worked to"
+							placeholder="Year worked to"
 							onChange={this.handleChange}
 						></input>
 						<input
@@ -84,11 +81,14 @@ class PracticalXp extends Component {
 		} else {
 			result = (
 				<div className="PracticalXp">
-					<li className={'PractXpList'}>{this.props.employer}</li>
-					<li>{this.state.position}</li>
-					<li>{this.state.dateFrom}</li>
-					<li>{this.state.dateTo}</li>
-					<li>{this.state.description}</li>
+					<li className={'PractXpList Title'}>
+						Employer: {this.props.employer}
+					</li>
+					<li>Position: {this.state.position}</li>
+					<li>
+						Years Worked: {this.state.dateFrom}-{this.state.dateTo}
+					</li>
+					<li>Job Description: {this.state.description}</li>
 
 					<div className="PractXp-buttons">
 						<button onClick={this.toggleForm}>

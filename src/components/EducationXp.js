@@ -9,13 +9,12 @@ class EducationXp extends Component {
 			major: '',
 			dateFrom: '',
 			dateTo: '',
-			graduated: '',
+			// graduated: '',
 		};
 		this.handleRemove = this.handleRemove.bind(this);
 		this.toggleForm = this.toggleForm.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		// this.handleToggle = this.handleToggle.bind(this);
 	}
 	handleRemove() {
 		this.props.removeXp(this.props.id);
@@ -33,9 +32,7 @@ class EducationXp extends Component {
 			[evt.target.name]: evt.target.value,
 		});
 	}
-	// handleToggle(evt) {
-	// 	this.props.toggleXp(this.props.id);
-	// }
+
 	render() {
 		let result;
 		if (this.state.isEditing) {
@@ -57,26 +54,26 @@ class EducationXp extends Component {
 							onChange={this.handleChange}
 						></input>
 						<input
-							type="date"
+							type="number"
 							value={this.state.dateFrom}
 							name="dateFrom"
-							placeholder="Date attended from"
+							placeholder="Year attended from"
 							onChange={this.handleChange}
 						></input>
 						<input
-							type="date"
+							type="number"
 							value={this.state.dateTo}
 							name="dateTo"
-							placeholder="Date attended to"
+							placeholder="Year attended to"
 							onChange={this.handleChange}
 						></input>
-						<input
+						{/* <input
 							type="text"
 							value={this.state.graduated}
 							name="graduated"
 							placeholder="Graduated?"
 							onChange={this.handleChange}
-						></input>
+						></input> */}
 						<button>Save</button>
 					</form>
 				</div>
@@ -84,19 +81,13 @@ class EducationXp extends Component {
 		} else {
 			result = (
 				<div className="Xp">
-					<li
-						className={
-							' EducationXp'
-							// this.props.completed ? 'PractXp completed' : 'PractXp'
-						}
-						// onClick={this.handleToggle}
-					>
-						{this.props.school}
+					<li className={' EducationXp Title'}>
+						School: {this.props.school}
 					</li>
-					<li>{this.state.major}</li>
-					<li>{this.state.dateFrom}</li>
-					<li>{this.state.dateTo}</li>
-					<li>{this.state.graduated}</li>
+					<li>Major: {this.state.major}</li>
+					<li>
+						Attended: {this.state.dateFrom}-{this.state.dateTo}
+					</li>
 
 					<div className="eduXp-buttons">
 						<button onClick={this.toggleForm}>

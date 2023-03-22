@@ -9,15 +9,11 @@ class GeneralXp extends Component {
 			email: '',
 			phone: '',
 		};
-		// this.handleRemove = this.handleRemove.bind(this);
 		this.toggleForm = this.toggleForm.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
-		// this.handleToggle = this.handleToggle.bind(this);
 	}
-	// handleRemove() {
-	// 	this.props.removeXp(this.props.id);
-	// }
+
 	toggleForm() {
 		this.setState({ isEditing: !this.state.isEditing });
 	}
@@ -31,9 +27,7 @@ class GeneralXp extends Component {
 			[evt.target.name]: evt.target.value,
 		});
 	}
-	// handleToggle(evt) {
-	// 	this.props.toggleXp(this.props.id);
-	// }
+
 	render() {
 		let result;
 		if (this.state.isEditing) {
@@ -68,7 +62,7 @@ class GeneralXp extends Component {
 		} else {
 			result = (
 				<div className="GenXp">
-					<li className={'GeneralInfo'}>{this.props.name}</li>
+					<li className={'GeneralInfo Title'}>{this.props.name}</li>
 					<li>{this.state.email}</li>
 					<li>{this.state.phone}</li>
 
@@ -76,9 +70,6 @@ class GeneralXp extends Component {
 						<button onClick={this.toggleForm}>
 							<i className="fas fa-pen" />
 						</button>
-						{/* <button onClick={this.handleRemove}>
-							<i className="fas fa-trash" />
-						</button> */}
 					</div>
 				</div>
 			);

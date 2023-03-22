@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import NewGeneralXpForm from './NewGeneralXpForm';
 import GeneralXp from './GeneralXp';
 import '../styles/General.css';
 
@@ -10,7 +9,7 @@ class General extends Component {
 			genXp: [{ name: 'Your Name', id: '1234' }],
 		};
 		this.create = this.create.bind(this);
-		// this.remove = this.remove.bind(this);
+
 		this.update = this.update.bind(this);
 		this.toggleCompletion = this.toggleCompletion.bind(this);
 	}
@@ -49,8 +48,6 @@ class General extends Component {
 					key={xp.id}
 					id={xp.id}
 					name={xp.name}
-					// completed={xp.completed}
-					// removeXp={this.remove}
 					updateXp={this.update}
 					toggleXp={this.toggleCompletion}
 				/>
@@ -58,11 +55,10 @@ class General extends Component {
 		});
 		return (
 			<div className="GeneralContainer">
-				<h1>General Information</h1>
+				<h2>General Information</h2>
 				<h3>Tell us about yourself</h3>
 
 				<ul>{genXp}</ul>
-				{/* <NewGeneralXpForm createXp={this.create} /> */}
 			</div>
 		);
 	}
