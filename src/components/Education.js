@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import EducationXp from './EducationXp';
 import NewEducationXpForm from './NewEducationXpForm';
-import '../styles/Education.css';
 
 class Education extends Component {
 	constructor(props) {

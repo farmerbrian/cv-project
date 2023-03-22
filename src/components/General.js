@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import GeneralXp from './GeneralXp';
-import '../styles/General.css';
 
 class General extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			genXp: [{ name: 'Your Name', id: '1234' }],
+			genXp: [{ name: 'Your Name Goes Here', id: '1234' }],
 		};
 		this.create = this.create.bind(this);
 

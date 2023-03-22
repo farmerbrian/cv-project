@@ -3,7 +3,7 @@ import General from './components/General.js';
 import Education from './components/Education.js';
 import Practical from './components/Practical.js';
 
-import './App.css';
+import './styles/App.css';
 
 class App extends Component {
 	render() {

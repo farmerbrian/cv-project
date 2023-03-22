@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NewPracticalXpForm from './NewPracticalXpForm';
 import PracticalXp from './PracticalXp';
-import '../styles/Practical.css';
 
 class Practical extends Component {
 	constructor(props) {
